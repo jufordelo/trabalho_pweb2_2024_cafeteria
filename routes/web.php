@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncomendaController;
-
+use App\Http\Controllers\ReservaController;
 Route::get('/', function () {
 });
 /*
@@ -26,8 +26,8 @@ Route::post('/aluno',
 Route::resource('encomenda', EncomendaController::class);
 Route::post('/encomenda/search', [EncomendaController::class,"search"])->name('encomenda.search');
 
-Route::resource('professor', ProfessorController::class);
-Route::post('/professor/search', [ProdutoController::class,"search"])->name('professor.search');
+Route::resource('reserva', ReservaController::class);
+Route::post('/reserva/search', [ProdutoController::class,"search"])->name('reserva.search');
 
 
 

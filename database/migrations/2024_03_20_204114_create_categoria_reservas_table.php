@@ -10,12 +10,10 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {//database/migration
-        Schema::create('encomendas', function (Blueprint $table) {
+    {
+        Schema::create('categoria_reservas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',100);
-            $table->string("qtn",14);
-            $table->string("contato",40);
+            $table->string('nome', 100);
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('encomendas');
+        Schema::dropIfExists('categoria_reservas');
     }
 };

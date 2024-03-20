@@ -10,9 +10,14 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('professors', function (Blueprint $table) {
+    {//database/migration
+        Schema::create('reservas', function (Blueprint $table) {
             $table->id();
+            $table->string('resp',100);
+            $table->string("tel",40);
+            $table->string("data",10);
+            $table->string("hora",5);
+            $table->string("pss",3);
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('professors');
+        Schema::dropIfExists('reserva');
     }
 };

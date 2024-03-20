@@ -15,7 +15,7 @@
         <div class="col-4" style="">
             <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass">
                 </i> Buscar</button>
-           <a href="{{url('encomenda/create')}}" class="btn btn-success"><i class="fa-regular fa-address-book"></i>Novo</a>
+           <a href="{{url('encomenda/create')}}" class="btn btn-success"><i class="fa-regular fa-address-book"></i>Novo Pedido</a>
         </div>
     </div>
 </form>

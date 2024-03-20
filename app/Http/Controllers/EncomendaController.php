@@ -21,9 +21,11 @@ class EncomendaController extends Controller
 
     public function store(Request $request)
     {
+
+       // dd($request->all());
         $request->validate([
             'nome'=>"required|max:100",
-             'qnt'=> "required|max:16",
+             'qtn'=> "required|max:16",
              'contato'=>"nullable"
         ],[
             'nome.required'=> "O :attribute é obrigatório",
