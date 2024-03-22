@@ -1,7 +1,10 @@
 @extends('base')
 @section('conteudo')
 
-    <h3>Faça seu Pedido de Festa abaixo:</h3>
+<body style="background-color:rgb(222, 198, 245);" > </body>
+
+   <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
+    <h4>Faça seu Pedido de Festa abaixo:</h4>
     @php
         if (!empty($dado->id)) {
             $route = route('encomenda.update', $dado->id);
@@ -51,8 +54,11 @@
 
 
 
-        <button type="submit">Enviar</button>
-        <button><a href="{{ url('encomenda') }} ">Voltar</a></button>
+        <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #B197FC;"></i>
+Enviar</button>
+
+
+        <button class="btn btn-dark"> <i class="fa-solid fa-rotate-left" style="color: #B197FC;"></i><a href="{{ url('encomenda') }} "></a>Voltar</a></button>
 
     </form>
 @stop

@@ -1,6 +1,7 @@
 @extends('base')
 @section('conteudo')
-
+<body style="background-color:rgb(222, 198, 245);">
+    <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
     <h3>Faça sua Reserva abaixo:</h3>
     @php
         if (!empty($dado->id)) {
@@ -53,7 +54,6 @@
 
 
         <label for="">Escolha a Categoria</label><br>
-
         <select name="categoria_reserva_id" class="form-select">
             @foreach ($categoria_reservas as $item)
                 <option value="{{ $item->id }}">{{ $item->nome }}</option>
@@ -61,9 +61,10 @@
         </select>
 
 
+        <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #B197FC;"></i>
+            Enviar</button>
+            <button class="btn btn-dark"> <i class="fa-solid fa-rotate-left" style="color: #B197FC;"></i><a href="{{ url('encomenda') }} "></a>Voltar</a></button>
 
-        <button type="submit">Resevar</button>
-        <button><a href="{{ url('reserva') }} ">Voltar</a></button>
 
     </form>
 @stop

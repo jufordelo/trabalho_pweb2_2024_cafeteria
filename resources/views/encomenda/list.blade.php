@@ -1,8 +1,7 @@
 @extends('base')
 @section('conteudo')
 @section('titulo' , "Formulario Encomenda")
-
-
+<body style="background-color:rgb(222, 198, 245);">
 
 <h3> Listagem de Encomendas </h3>
 <form action="{{route('encomenda.search')}}" method="post">
@@ -13,9 +12,9 @@
             <input type="text" name="nome" class="form-control"><br>
         </div>
         <div class="col-4" style="">
-            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass">
+            <button type="submit"class="btn btn-info"><i class="fa-solid fa-user"></class=>
                 </i> Buscar</button>
-           <a href="{{url('encomenda/create')}}" class="btn btn-success"><i class="fa-regular fa-address-book"></i>Novo Pedido</a>
+           <a href="{{url('encomenda/create')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>  Novo Pedido</a>
         </div>
     </div>
 </form>
@@ -46,7 +45,7 @@
                 <td><form action="{{route('encomenda.destroy',$item)}}" method="post">
                 @method("DELETE")
                 @csrf
-                <input type="submit" value="Deletar">
+                <input type="submit" value="Deletar" class="btn btn-danger">
                 </form>
                 </td>
             </tr>

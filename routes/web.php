@@ -27,7 +27,11 @@ Route::resource('encomenda', EncomendaController::class);
 Route::post('/encomenda/search', [EncomendaController::class,"search"])->name('encomenda.search');
 
 Route::resource('reserva', ReservaController::class);
-Route::post('/reserva/search', [ProdutoController::class,"search"])->name('reserva.search');
+Route::post('/reserva/search', [ReservaController::class,"search"])->name('reserva.search');
+
+
+Route::resource('categoria_reserva', CategoriaReservaController::class);
+Route::post('/categoria_reserva/search', [CategoriaReservaController::class,"search"])->name('categoria_reserva.search');
 
 
 
