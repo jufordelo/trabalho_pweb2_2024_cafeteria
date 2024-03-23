@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Professor>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Encomenda>
  */
 class ReservaFactory extends Factory
 {
@@ -17,7 +17,7 @@ class ReservaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nome' => $this->faker->word(),
         ];
     }
 }

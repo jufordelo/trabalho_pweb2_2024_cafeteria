@@ -44,8 +44,7 @@
         <br>
 
 
-        <label for="">Categorias</label><br>
-
+        <label for=""> Escolha uma opção</label><br>
         <select name="categoria_id" class="form-select">
             @foreach ($categorias as $item)
                 <option value="{{ $item->id }}">{{ $item->nome }}</option>

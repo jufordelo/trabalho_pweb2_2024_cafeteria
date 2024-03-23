@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 class ReservaController extends Controller
 {
     public function index()
-    { //app/http/controler
+    {
         $dados = Reserva::all();
-        //dd($dados);
+
         return view("reserva.listr", ["dados" => $dados]);
     }
 
@@ -116,15 +116,14 @@ class ReservaController extends Controller
     }
     public function search(Request $request)
     {
-        if (!empty($request->pss)) {
+        if(! empty ($request->nome)){
             $dados = Reserva::where(
-                "pss",
+                "nome",
                 "like",
-                "%" . $request->pss . "%"
-            )->get();
-        } else {
-            $dados = Reserva::all();
+                "%". $request->nome . "%" )->get();
+        } else{
+            $dados=Reserva::all();
         } //dd($dados)
-        return view("reserva.listr", ["dados" => $dados]);
+             return view("reserva.listr",["dados"=> $dados]);
     }
 }

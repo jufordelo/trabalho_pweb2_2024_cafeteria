@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class EncomendaController extends Controller
 {
     public function index()
-    { //app/http/controler
-        $dados=Encomenda::all();
-       //dd($dados);
-        return view("encomenda.list",["dados"=> $dados]);
+    {
+         $dados= Encomenda::all();
+
+        return view("encomenda.list", ["dados"=> $dados]);
     }
 
     public function create()
@@ -61,7 +61,10 @@ class EncomendaController extends Controller
     public function edit(string $id)
     {
      $dado= Encomenda::findOrFail($id);
-     return view ("encomenda.form",['dado'=>$dado,
+     $categorias= Categoria::all();
+
+     return view ("encomenda.form",
+     ['dado'=>$dado,
     'categorias'=>$categorias]);
     }
 

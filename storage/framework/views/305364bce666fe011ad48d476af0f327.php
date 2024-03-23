@@ -46,8 +46,7 @@
         <br>
 
 
-        <label for="">Categorias</label><br>
-
+        <label for=""> Escolha uma opção</label><br>
         <select name="categoria_id" class="form-select">
             <?php $__currentLoopData = $categorias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <option value="<?php echo e($item->id); ?>"><?php echo e($item->nome); ?></option>

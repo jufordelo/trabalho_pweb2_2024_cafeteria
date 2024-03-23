@@ -3,16 +3,19 @@
 <body style="background-color:rgb(222, 198, 245);">
 
 <h3> Listagem de Encomendas </h3>
+<h5>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h5> <br>
 <form action="<?php echo e(route('encomenda.search')); ?>" method="post">
     <div class="row">
         <?php echo csrf_field(); ?>
         <div class= "col-4">
-            <label for="">Nome</label><br>
+            <label for=""> Nome</label><br>
             <input type="text" name="nome" class="form-control"><br>
         </div>
+
         <div class="col-4" style="">
-            <button type="submit"class="btn btn-info"><i class="fa-solid fa-user"></class=>
+            <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
                 </i> Buscar</button>
+
            <a href="<?php echo e(url('encomenda/create')); ?>" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>  Novo Pedido</a>
         </div>
     </div>
@@ -26,8 +29,8 @@
                     <th>Contato</th>
                     <th>Quantidade</th>
                     <th>Categoria</th>
-                    <th colspan="2">Ações</th>
-                    <th colspan="2">Ações</th>
+                    <th colspan="2">EDITAR</th>
+                    <th colspan="2">EXCLUIR</th>
             </tr>
         </thead>
         <tbody>
@@ -36,15 +39,17 @@
                 <td><?php echo e($item->id); ?></td>
                 <td><?php echo e($item->nome); ?></td>
                 <td><?php echo e($item->contato); ?></td>
-                <td><?php echo e($item->qnt); ?></td>
+                <td><?php echo e($item->qtn); ?></td>
                 <td><?php echo e($item->categoria->nome ?? ""); ?></td>
-                <td>Editar</td>
-                <td><a href="<?php echo e(route('encomenda.edit', $item->id)); ?>"> Editar </a></td>
+                <td></td>
+                <td><a href="<?php echo e(route('encomenda.edit', $item->id)); ?>" class="btn btn-dark"><i class="fa-solid fa-pencil" style="color: #f04c7d;"></i></a></td>
 
                 <td><form action="<?php echo e(route('encomenda.destroy',$item)); ?>" method="post">
                 <?php echo method_field("DELETE"); ?>
                 <?php echo csrf_field(); ?>
-                <input type="submit" value="Deletar" class="btn btn-danger">
+                <button type="submit" class="btn btn-outline-danger" title="Deletar"
+                        onclick="return confirm('Deseja realmente deletar esse registro?')">
+                        <i class="fa-solid fa-trash-can"></i></button>
                 </form>
                 </td>
             </tr>

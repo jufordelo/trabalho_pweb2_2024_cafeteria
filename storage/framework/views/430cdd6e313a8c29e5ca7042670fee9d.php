@@ -57,7 +57,7 @@
         <br>
 
 
-        <label for="">Escolha a Categoria</label><br>
+        <label for=""> Escolha uma opção de reserva: </label><br>
         <select name="categoria_reserva_id" class="form-select">
             <?php $__currentLoopData = $categoria_reservas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <option value="<?php echo e($item->id); ?>"><?php echo e($item->nome); ?></option>
