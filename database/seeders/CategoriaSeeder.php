@@ -13,6 +13,10 @@ class CategoriaSeeder extends Seeder
      */
     public function run(): void
     {
-        Categoria::factory()->count(3)->create();
+        Categoria::factory()->count(4)->sequence(
+            ['nome'=> 'Bolo morango kg'],
+            ['nome'=> 'Bolo chocolate kg'],
+            ['nome'=> 'Mix salgados festa'],
+            ['nome'=> 'Mix doces festa'],)->create();
     }
 }
