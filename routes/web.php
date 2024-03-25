@@ -32,5 +32,6 @@ Route::post('/reserva/search', [ReservaController::class,"search"])->name('reser
 Route::resource('categoria_reserva', CategoriaReservaController::class);
 Route::post('/categoria_reserva/search', [CategoriaReservaController::class,"search"])->name('categoria_reserva.search');
 
-
+Route::resource('sugestao', SugestaoController::class);
+Route::post('/sugestao/search', [SugestaoController::class,"search"])->name('sugestao.search');
 
