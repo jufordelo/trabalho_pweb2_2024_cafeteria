@@ -17,7 +17,9 @@ class SugestaoFactory extends Factory
     public function definition(): array
     {
         return [
-            'nome' => $this->faker->word(),
+            'assunto' => $this->faker->word(),
+            'tipo' => $this->faker->randomElement(['Ótimo', 'Bom', 'Médio', 'Ruim', 'Péssimo']),
+            'comentario' => $this->faker->paragraph(),
         ];
     }
 }

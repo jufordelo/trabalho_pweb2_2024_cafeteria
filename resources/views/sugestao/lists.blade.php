@@ -10,8 +10,8 @@
     <div class="row">
         @csrf
         <div class= "col-4">
-            <label for=""> Nome </label><br>
-            <input type="text" name="nome" class="form-control"><br>
+            <label for=""> Assunto </label><br>
+            <input type="text" name="assunto" class="form-control"><br>
         </div>
         <div class="col-4" style="">
             <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
@@ -27,13 +27,9 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Responsável da Reserva</th>
-            <th>Telefone</th>
-            <th>Data da reserva</th>
-            <th>Horário da reserva</th>
-            <th>Quantidade de pessoas</th>
-            <th>Escolha a Categoria</th>
+            <th>Assunto</th>
+            <th>Grau de atendimento</th>
+            <th>Comentário</th>
             <th colspan="2">EDITAR</th>
             <th colspan="2">EXCLUIR</th>
         </tr>
@@ -41,14 +37,9 @@
     <tbody>
         @foreach ($dados as $item)
             <tr>
-                <td>{{ $item->id }}</td>
-                <td>{{ $item->resp }}</td>
-                <td>{{ $item->tel }}</td>
-                <td>{{ $item->data }}</td>
-                <td>{{ $item->hora }}</td>
-                <td>{{ $item->pss }}</td>
-                <td>{{ $item->categoria->nome ?? '' }}</td>
-                <td></td>
+                <td>{{ $item->assunto}}</td>
+                <td>{{ $item->tipo}}</td>
+                <td>{{ $item->comentario }}</td>
                 <td><a href="{{ route('sugestao.edit', $item->id) }}"class="btn btn-dark"><i class="fa-solid fa-pencil" style="color: #f04c7d;"></i></a></td>
 
                 <td><form action="{{ route('sugestao.destroy', $item) }}" method="post">

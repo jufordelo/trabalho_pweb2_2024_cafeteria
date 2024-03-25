@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sugestao extends Model
+class CategoriaSugestao extends Model
 {
     use HasFactory;
 
-    protected $table = "sugestao";
-
+    protected $table = "categoria_sugestao";
+    //app/Models/
     protected $fillable = [
-        "assunto",
         "tipo",
-        "comentario",
-        "categoria_sugestao_id",
     ];
-
 }

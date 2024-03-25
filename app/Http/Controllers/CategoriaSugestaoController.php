@@ -6,7 +6,7 @@ use App\Models\Sugestao;
 use App\Models\CategoriaSugestao;
 use Illuminate\Http\Request;
 
-class SugestaoController extends Controller
+class CategoriaSugestaoController extends Controller
 {
     public function index()
     {
@@ -26,18 +26,20 @@ class SugestaoController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'assunto' => "required|max:100",
-            'tipo' => "nullable",
-            'comentario' => "nullable",
+            'resp' => "required|max:100",
+            'data' => "nullable",
+            'hora' => "nullable",
+            'pss' => "required|max:3",
+            'tel' => "nullable",
         ], [
-            'assunto.required' => "O :attribute é obrigatório",
-            'assunto.max' => "São permitidos 100 caracteres",
-            'comentario.required' => "O :attribute é obrigatório",
-            'comentario.max' => "São permitidos 3 caracteres",
+            'resp.required' => "O :attribute é obrigatório",
+            'resp.max' => "São permitidos 100 caracteres",
+            'pss.required' => "O :attribute é obrigatório",
+            'pss.max' => "São permitidos 3 caracteres",
             //  'categoria_sugestao_id.required'=> "O: attribute é obrigatório",
         ]);
 
-        //dd($request->all());
+        // dd($request->all());
         Sugestao::create(
             $request->all()
         );
@@ -76,13 +78,13 @@ class SugestaoController extends Controller
 
         $request->validate([
             'assunto' => "required|max:100",
-            'tipo' => "nullable",
-            'comentario' => "required|max:16",
+            'tipo' => "required|max:16",
+            'comentario' => "nullable"
         ], [
             'assunto.required' => "O :attribute é obrigatório",
             'assunto.max' => "São permitidos 100 caracteres",
-            'comentario.required' => "O :attribute é obrigatório",
-            'comentario.max' => "São permitidos 100 caracteres",
+            'tipo.required' => "O :attribute é obrigatório",
+            'tipo.max' => "É permitido somente 3 unidades",
             'categoria_sugestao_id.required' => "O: attribute é obrigatório",
         ]);
 
@@ -91,9 +93,9 @@ class SugestaoController extends Controller
             ['id' => $request->id],
 
             [
-                'assunto' => $request->assunto,
-                'tipo' => $request->tipo,
-                'comentario' => $request->comentario,
+                'assunto' => $request->resp,
+                'tipo' => $request->tel,
+                'comentario' => $request->pss,
                 'categoria_sugestao_id' => $request->categoria_sugestao_id,
             ]
         );
@@ -113,15 +115,14 @@ class SugestaoController extends Controller
     }
     public function search(Request $request)
     {
-        if (!empty($request->nome)) {
+        if(! empty ($request->nome)){
             $dados = Sugestao::where(
-                "tipo",
+                "assunto",
                 "like",
-                "%" . $request->nome . "%"
-            )->get();
-        } else {
-            $dados = Sugestao::all();
+                "%". $request->nome . "%" )->get();
+        } else{
+            $dados=Sugestao::all();
         } //dd($dados)
-        return view("sugestao.lists", ["dados" => $dados]);
+             return view("sugestao.lists",["dados"=> $dados]);
     }
 }

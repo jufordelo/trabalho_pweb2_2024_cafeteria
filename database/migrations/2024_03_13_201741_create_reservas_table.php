@@ -11,6 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {//database/migration
+
+
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
             $table->string('resp',100);
@@ -18,8 +22,12 @@ return new class extends Migration
             $table->string("data",10);
             $table->string("hora",5);
             $table->string("pss",3);
+            $table->foreignId ('categoria_reserva_id')->nullable()
+                ->constrained('categoria_reservas')->after('id');
             $table->timestamps();
         });
+
+      Schema::enableForeignKeyConstraints();
     }
 
     /**

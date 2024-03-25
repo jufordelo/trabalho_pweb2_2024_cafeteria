@@ -16,6 +16,12 @@ return new class extends Migration
             $table->string('nome',100);
             $table->timestamps();
         });
+
+        Schema::create('categoria_reservas', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome',100);
+            $table->timestamps();
+        });
     }
 
     /**
