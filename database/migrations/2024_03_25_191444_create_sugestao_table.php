@@ -11,13 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('sugestao', function (Blueprint $table) {
             $table->id();
             $table->string('assunto', 120);
             $table->string('tipo', 50);
             $table->text('comentario');
+            $table->foreignId ('categoria_sugestao_id')->nullable()
+                  ->constrained('categoria_sugestao')->after('id');
             $table->timestamps();
         });
+
+
+      Schema::enableForeignKeyConstraints();
+
     }
 
     /**

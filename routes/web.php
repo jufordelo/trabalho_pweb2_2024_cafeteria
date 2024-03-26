@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\SugestaoController;
+
 Route::get('/', function () {
 });
 /*

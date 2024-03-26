@@ -116,11 +116,11 @@ class ReservaController extends Controller
     }
     public function search(Request $request)
     {
-        if(! empty ($request->nome)){
+        if(! empty ($request->resp)){
             $dados = Reserva::where(
-                "nome",
+                "resp",
                 "like",
-                "%". $request->nome . "%" )->get();
+                "%". $request->resp . "%" )->get();
         } else{
             $dados=Reserva::all();
         } //dd($dados)
