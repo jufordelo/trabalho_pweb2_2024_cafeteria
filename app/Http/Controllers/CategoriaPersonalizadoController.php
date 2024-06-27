@@ -1,36 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\CategoriaPersonalizado;
+
 use App\Models\Personalizado;
+use App\Models\CategoriaPersonalizado;
 use Illuminate\Http\Request;
 
-class PersonalizadoController extends Controller
+class CategoriaPersonalizadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $dados= Personalizado::all();
+        $dados = Personalizado::all();
 
-        return view("personalizado.list", ["dados"=> $dados]);
+        return view("personalizado.lists", ["dados" => $dados]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        $categorias= Categoria::all();
-        return view("personalizado.form",['categorias'=>$categorias]);
+        $categoria_personalizado = CategoriaPersonalizado::all();
+
+        return view("personalizado.forms", ['categoria_personalizado' => $categoria_personalizado]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'nome'=>"required|max:100",
              'peso'=> "required|max:16",
@@ -44,7 +38,7 @@ class PersonalizadoController extends Controller
         ]);
 
 
-        Personalizado::create(
+        Encomenda::create(
             [ 'nome'=> $request->nome,
             'contato'=> $request->contato,
             'peso'=> $request->peso,
@@ -57,7 +51,7 @@ class PersonalizadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Personalizado $personalizado)
+    public function show(string $id)
     {
         //
     }
@@ -116,7 +110,11 @@ class PersonalizadoController extends Controller
         return redirect('personalizado');
     }
 
-    public function search(Request $request)
+    /**
+     * Remove the specified resource from storage.
+     */
+
+     public function search(Request $request)
     {
         if(! empty ($request->nome)){
             $dados = Personalizado::where(
@@ -129,5 +127,4 @@ class PersonalizadoController extends Controller
              return view("personalizado.list",["dados"=> $dados]);
 
     }
-
 }

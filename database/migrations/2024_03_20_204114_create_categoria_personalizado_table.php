@@ -10,12 +10,10 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {//database/migration
-        Schema::create('personalizado', function (Blueprint $table) {
+    {
+        Schema::create('categoria_personalizado', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',100);
-            $table->string("contato",40);
-            $table->string("peso",14);
+            $table->string('sabor', 50);
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personalizado');
+        Schema::dropIfExists('categoria_personalizado');
     }
 };

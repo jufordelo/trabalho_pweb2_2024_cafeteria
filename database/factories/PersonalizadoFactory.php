@@ -17,7 +17,13 @@ class PersonalizadoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-        ];
+
+            'categoria_personalizado' => $this->faker->randomElement(
+             'Bolo Morango kg',
+             'Bolo Chocolate kg',
+            'Bolo Red Velvet kg',
+            'Bolo Baunilha kg',
+            'Bolo Marta Rocha kg',
+        )];
     }
 }

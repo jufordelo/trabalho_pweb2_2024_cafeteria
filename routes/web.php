@@ -37,3 +37,6 @@ Route::post('/categoria_reserva/search', [CategoriaReservaController::class,"sea
 Route::resource('sugestao', SugestaoController::class);
 Route::post('/sugestao/search', [SugestaoController::class,"search"])->name('sugestao.search');
 
+Route::resource('personalizado', PersonalizadoController::class);
+Route::post('/personalizado/search', [PersonalizadoController::class,"search"])->name('personalizado.search');
+
