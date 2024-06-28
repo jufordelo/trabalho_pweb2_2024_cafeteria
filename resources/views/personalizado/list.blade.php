@@ -1,6 +1,6 @@
 @extends('base')
 @section('conteudo')
-@section('titulo' , "Formulario Personalizado")
+@section('titulo' , "Listagem Personalização")
 <body style="background-color:rgb(222, 198, 245);">
 
 <h3> Listagem de Personalização </h3>
@@ -17,7 +17,7 @@
             <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
                 </i> Buscar</button>
 
-           <a href="{{url('personalizado/create')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>  Novo Pedido</a>
+           <a href="{{url('personalizado/create')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>  Nova Personalização </a>
         </div>
     </div>
 </form>
@@ -35,23 +35,13 @@
             </tr>
         </thead>
         <tbody>
-                @foreach ($personalizado as $item)
-
-                @php
-                $nome_imagem = !empty($item->imagem) ? $item->imagem : 'sem_imagem.jpg';
-            @endphp
-            <tr
-                class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $item->id }}</td>
-                <td class="h-32 w-32 object-cover rounded-full"><img src="/storage/{{ $nome_imagem }}" width="100px"
-                        alt="imagem"></td>
-
+            @foreach ($dados as $item)
             <tr>
                 <td>{{$item->id}}</td>
                 <td>{{$item->nome}}</td>
                 <td>{{$item->contato}}</td>
                 <td>{{$item->peso}}</td>
-                <td>{{$item->categoria->nome ?? ""}}</td>
+                <td>{{$item->categoria_personalizado->nome ?? ""}}</td>
                 <td></td>
                 <td><a href="{{route('personalizado.edit', $item->id)}}" class="btn btn-dark"><i class="fa-solid fa-pencil" style="color: #f04c7d;"></i></a></td>
 

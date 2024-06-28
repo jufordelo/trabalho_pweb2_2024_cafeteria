@@ -1,15 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\CategoriaPersonalizado;
 use App\Models\Personalizado;
+use App\Models\CategoriaPersonalizado;
 use Illuminate\Http\Request;
 
 class PersonalizadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $dados= Personalizado::all();
@@ -17,18 +14,13 @@ class PersonalizadoController extends Controller
         return view("personalizado.list", ["dados"=> $dados]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
-        $categorias= Categoria::all();
-        return view("personalizado.form",['categorias'=>$categorias]);
+        $categoria_personalizados= CategoriaPersonalizado::all();
+        return view("personalizado.form",['categoria_personalizados'=> $categoria_personalizados]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -40,24 +32,24 @@ class PersonalizadoController extends Controller
             'nome.max'=> "São permitidos 100 caracteres",
             'peso.required'=> "O :attribute é obrigatório",
             'peso.max'=> "São permitidos 16 caracteres",
-            'categoria_id.required'=> "O: attribute é obrigatório",
+            'categoria_personalizado_id.required'=> "O: attribute é obrigatório",
         ]);
-
 
         Personalizado::create(
             [ 'nome'=> $request->nome,
             'contato'=> $request->contato,
             'peso'=> $request->peso,
-            'categoria_id'=>$request->categoria_id,
+            'categoria_personalizado_id'=>$request->categoria_personalizado_id,
             ] );
 
             return redirect('personalizado');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Personalizado $personalizado)
+    public function show(string $id)
     {
         //
     }
@@ -67,12 +59,12 @@ class PersonalizadoController extends Controller
      */
     public function edit(string $id)
     {
-        $dado= Personalizado::findOrFail($id);
-        $categorias= Categoria::all();
-
-        return view ("personalizado.form",
-        ['dado'=>$dado,
-       'categorias'=>$categorias]);
+        $dado = Personalizado::findOrFail($id);
+        $categoria_personalizados = CategoriaPersonalizado::all();
+        return view("personalizado.form", [
+            'dado' => $dado,
+            'categoria_personalizados' => $categoria_personalizados
+        ]);
     }
 
     /**
@@ -82,26 +74,26 @@ class PersonalizadoController extends Controller
     {
         $request->validate([
             'nome'=>"required|max:100",
-             'peso'=> "required|max:16",
-             'contato'=>"nullable"
+            'contato'=>"nullable",
+            'peso'=> "required|max:16",
         ],[
             'nome.required'=> "O :attribute é obrigatório",
             'nome.max'=> "São permitidos 100 caracteres",
             'peso.required'=> "O :attribute é obrigatório",
             'peso.max'=> "É permitido somente 100 unidades",
-            'categoria_id.required'=> "O: attribute é obrigatório",
+            'categoria_personalizado_id.required'=> "O: attribute é obrigatório",
         ]);
-
 
         Personalizado::updateOrCreate(
             [ 'id'=> $request->id],
-
             [ 'nome'=> $request->nome,
             'contato'=> $request->contato,
             'peso'=> $request->peso,
-            'categoria_id'=>$request->categoria_id,
+            'categoria_personalizado_id'=>$request-> categoria_personalizado_id,
+
         ]);
-            return redirect('personalizado');
+
+
     }
 
     /**

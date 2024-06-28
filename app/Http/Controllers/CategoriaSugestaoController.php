@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Sugestao;
 use App\Models\CategoriaSugestao;
 use Illuminate\Http\Request;

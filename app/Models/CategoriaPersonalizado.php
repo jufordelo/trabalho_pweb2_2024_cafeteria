@@ -12,6 +12,6 @@ class CategoriaPersonalizado extends Model
     protected $table = "categoria_personalizado";
     //app/Models/
     protected $fillable = [
-        "categoria",
+        "categoria_personalizado_id",
     ];
 }

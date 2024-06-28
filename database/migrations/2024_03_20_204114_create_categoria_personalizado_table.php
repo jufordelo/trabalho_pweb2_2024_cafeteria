@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('categoria_personalizado', function (Blueprint $table) {
             $table->id();
-            $table->string('sabor', 50);
+            $table->string('nome', 50);
             $table->timestamps();
         });
     }
