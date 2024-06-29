@@ -15,13 +15,13 @@ class Personalizado extends Model
         "nome",
         "contato",
         "peso",
-        "categoria_id",
+        "categoria_personalizado_id",
     ];
     protected $casts=[
-        'categoria_id'=>'integer'
+        'categoria_personalizado_id'=>'integer'
     ];
     public function categoria(){
-        return $this->belongsTo(Categoria::class, 'categoria_id');//tabela interior da relação
+        return $this->belongsTo(CategoriaPersonalizado::class, 'categoria_personalizado_id');//tabela interior da relação
     }
 }
 

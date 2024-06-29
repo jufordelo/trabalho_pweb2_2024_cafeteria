@@ -46,7 +46,7 @@
 
         <label for=""> Escolha uma opção de Sabor </label><br>
         <select name="categoria_personalizado_id" class="form-select">
-            @foreach ($categoria_personalizados as $item)
+            @foreach ($categoria_personalizado as $item)
                 <option value="{{ $item->id }}">{{ $item->nome }}</option>
             @endforeach
         </select>

@@ -17,8 +17,8 @@ class PersonalizadoController extends Controller
 
     public function create()
     {
-        $categoria_personalizados= CategoriaPersonalizado::all();
-        return view("personalizado.form",['categoria_personalizados'=> $categoria_personalizados]);
+        $categoria_personalizado = CategoriaPersonalizado::all();
+        return view("personalizado.form",['categoria_personalizado'=> $categoria_personalizado]);
     }
 
     public function store(Request $request)
@@ -86,6 +86,7 @@ class PersonalizadoController extends Controller
 
         Personalizado::updateOrCreate(
             [ 'id'=> $request->id],
+
             [ 'nome'=> $request->nome,
             'contato'=> $request->contato,
             'peso'=> $request->peso,
