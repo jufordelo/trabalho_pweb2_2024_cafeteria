@@ -9,7 +9,7 @@ class CategoriaPersonalizado extends Model
 {
     use HasFactory;
 
-    protected $table = "categoria_personalizado";
+    protected $table = "categoria_personalizados";
     //app/Models/
     protected $fillable = [
         "nome",

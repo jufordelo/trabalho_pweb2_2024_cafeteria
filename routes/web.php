@@ -5,6 +5,7 @@ use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\SugestaoController;
 use App\Http\Controllers\PersonalizadoController;
+use App\Http\Controllers\InscricaoController;
 
 Route::get('/', function () {
 });
@@ -25,3 +26,5 @@ Route::post('/sugestao/search', [SugestaoController::class,"search"])->name('sug
 Route::resource('personalizado', PersonalizadoController::class);
 Route::post('/personalizado/search', [PersonalizadoController::class,"search"])->name('personalizado.search');
 
+Route::resource('inscricao', InscricaoController::class);
+    Route::post('/inscricao/search', [InscricaoController::class, "search"])->name('inscricao.search');

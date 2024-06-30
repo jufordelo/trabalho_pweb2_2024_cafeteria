@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Encomenda;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+
 class EncomendaController extends Controller
 {
     public function index()
