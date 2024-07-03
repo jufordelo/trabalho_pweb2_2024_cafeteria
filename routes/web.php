@@ -7,12 +7,15 @@ use App\Http\Controllers\SugestaoController;
 use App\Http\Controllers\PersonalizadoController;
 use App\Http\Controllers\InscricaoController;
 
+
 Route::get('/', function () {
 });
 
 //pesquisa/buscar
-Route::resource('encomenda', EncomendaController::class);
+
 Route::post('/encomenda/search', [EncomendaController::class,"search"])->name('encomenda.search');
+Route::get('/encomenda/chart',[EncomendaController::class, "chart"])-> name ("encomenda.chart");
+Route::resource('encomenda', EncomendaController::class);
 
 Route::resource('reserva', ReservaController::class);
 Route::post('/reserva/search', [ReservaController::class,"search"])->name('reserva.search');
@@ -28,3 +31,5 @@ Route::post('/personalizado/search', [PersonalizadoController::class,"search"])-
 
 Route::resource('inscricao', InscricaoController::class);
     Route::post('/inscricao/search', [InscricaoController::class, "search"])->name('inscricao.search');
+
+    Route::get('/encomenda/chart',[EncomendaController::class, "chart"])-> name ("encomenda.chart");

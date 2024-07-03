@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {//database/mig
-        Schema::disableForeignKeyConstraints();ration
+        Schema::disableForeignKeyConstraints();
         Schema::create('inscricaos', function (Blueprint $table) {
             $table->id();
             $table->string('nome',100);
@@ -21,6 +21,8 @@ return new class extends Migration
                 ->constrained('categoria_inscricaos')->after('id');
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\Encomenda;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use App\Charts\GraficoEncomenda;
+
 
 class EncomendaController extends Controller
 {
     public function index()
     {
-         $dados= Encomenda::all();
+         $dados=Encomenda::all();
 
         return view("encomenda.list", ["dados"=> $dados]);
     }
@@ -122,6 +124,10 @@ class EncomendaController extends Controller
         } //dd($dados)
              return view("encomenda.list",["dados"=> $dados]);
 
+    }
+    public function chart(GraficoEncomenda $encomendaChart)
+    {
+        return view("encomenda.chart", ["encomendaChart" => $encomendaChart -> build()]);
     }
 
 }

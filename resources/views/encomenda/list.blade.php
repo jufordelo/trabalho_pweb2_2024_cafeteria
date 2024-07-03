@@ -17,7 +17,13 @@
             <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
                 </i> Buscar</button>
 
-           <a href="{{url('encomenda/create')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>  Novo Pedido</a>
+           <a href="{{url('encomenda/create')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>Novo Pedido</a>
+
+
+
+
+           
+           <a href="{{url('encomenda/chart')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>Gerar Gráfico</a>
         </div>
     </div>
 </form>
