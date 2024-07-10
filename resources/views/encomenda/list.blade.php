@@ -14,16 +14,14 @@
         </div>
 
         <div class="col-4" style="">
+            <div style="white-space: nowrap;">
             <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
-                </i> Buscar</button>
+                </i>Buscar</button>
+                    <a href="{{url('encomenda/create')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-cart-shopping" style="color: #76f0e6;"></i> Novo Pedido</a>
+                    <a href="{{url('encomenda/chart')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-layer-group" style="color: #7e71f8;"></i> Gráfico</a>
+                    <a href="{{url('encomenda/generate-pdf')}}" class="btn btn-dark" style="display: inline-block;"><i class="fa-solid fa-file-pdf" style="color: #f27979;"></i> Relatório PDF</a>
+                </div>
 
-           <a href="{{url('encomenda/create')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>Novo Pedido</a>
-
-
-
-
-           
-           <a href="{{url('encomenda/chart')}}" class="btn btn-dark"><i class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i></i>Gerar Gráfico</a>
         </div>
     </div>
 </form>

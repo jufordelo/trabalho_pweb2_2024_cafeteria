@@ -13,7 +13,6 @@ class CategoriaInscricaoSeeder extends Seeder
      */
     public function run(): void
     {
-        public function run(): void
         {
             CategoriaInscricao::factory()->count(4)->sequence(
                 ['nome'=> 'Crossaint de Morango com chocolate'],
@@ -21,6 +20,6 @@ class CategoriaInscricaoSeeder extends Seeder
                 ['nome'=> 'Fatia de Bolo Red Velvet '],
                 ['nome'=> 'Escolha nossas massas folhadas'] )->create();
         }
-       
+
     }
 }
