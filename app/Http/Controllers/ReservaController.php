@@ -6,6 +6,7 @@ use App\Models\Reserva;
 use App\Models\categoria1;
 use App\Models\CategoriaReserva;
 use Illuminate\Http\Request;
+use App\Charts\GraficoReserva;
 
 class ReservaController extends Controller
 {
@@ -125,5 +126,9 @@ class ReservaController extends Controller
             $dados=Reserva::all();
         } //dd($dados)
              return view("reserva.listr",["dados"=> $dados]);
+    }
+    public function chart(GraficoReserva $reservaChart)
+    {
+        return view("reserva.chart", ["reservaChart" => $reservaChart -> build()]);
     }
 }

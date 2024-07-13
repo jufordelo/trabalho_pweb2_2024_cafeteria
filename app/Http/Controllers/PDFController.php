@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use PDF;
 use App\Models\Encomenda; // Substitua pelo modelo correto da sua aplicação
+use PDF;
 
-class PDFController extends Controller
+class PdfController extends Controller
 {
-    public function generatePDF()
+    public function gerarPDF()
     {
         $encomendas = Encomenda::all(); // Busca as encomendas do banco de dados ou use o método apropriado para recuperar os dados
 
@@ -16,6 +15,6 @@ class PDFController extends Controller
         $pdf = PDF::loadView('pdf', ['encomendas' => $encomendas]);
 
         // Retorna o PDF gerado para download no navegador
-        return $pdf->download('relatorio.pdf');
+        return $pdf->dow('Relatório_de_Encomendas.pdf');
     }
 }

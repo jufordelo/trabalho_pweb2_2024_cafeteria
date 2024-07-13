@@ -56,7 +56,7 @@ class EncomendaController extends Controller
      */
     public function show(string $id)
     {
-        
+
     }
 
     /**
@@ -130,22 +130,6 @@ class EncomendaController extends Controller
     {
         return view("encomenda.chart", ["encomendaChart" => $encomendaChart -> build()]);
     }
-
-    public function generatePDF()
-
-    {
-
-        $data = ['title' => 'Welcome to ItSolutionStuff.com'];
-
-        $pdf = PDF::loadView('myPDF', $data);
-
-
-        return $pdf->download('itsolutionstuff.pdf');
-
-    }
-
-
-
 
 
 }

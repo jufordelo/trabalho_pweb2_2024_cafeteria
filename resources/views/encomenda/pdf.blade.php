@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($encomendas as $encomenda)
+            @foreach($encomenda as $encomendas)
             <tr>
                 <td>{{ $encomenda->id }}</td>
                 <td>{{ $encomenda->cliente }}</td>
