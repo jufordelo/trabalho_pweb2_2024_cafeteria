@@ -1,7 +1,7 @@
 @extends('base')
 @section('conteudo')
 @section('titulo' , "Formulario Encomenda")
-<body style="background-color:rgb(222, 198, 245);">
+<body style="background-color:rgb(228, 226, 149);">
 
 <h3> Listagem de Encomendas </h3>
 <h5>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h5> <br>

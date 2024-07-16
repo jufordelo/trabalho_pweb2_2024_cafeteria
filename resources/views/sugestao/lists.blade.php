@@ -2,7 +2,7 @@
 @section('conteudo')
 @section('titulo', 'Formulario Sugestao')
 
-<body style="background-color:rgb(222, 198, 245);">
+<body style="background-color:rgb(182, 234, 255);">
 
     <h3> Listagem de Sugestões </h3>
     <h5> BREKIEE COFFEE<i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h5> <br>

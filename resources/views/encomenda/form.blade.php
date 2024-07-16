@@ -1,7 +1,7 @@
 @extends('base')
 @section('conteudo')
 
-<body style="background-color:rgb(222, 198, 245);" > </body>
+<body style="background-color:rgb(228, 226, 149);" > </body>
 
    <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
     <h4>Faça seu Pedido de Festa abaixo:</h4>

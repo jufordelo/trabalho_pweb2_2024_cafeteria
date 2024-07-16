@@ -1,7 +1,7 @@
 @extends('base')
 @section('conteudo')
 
-    <body style="background-color:rgb(222, 198, 245);">
+    <body style="background-color:rgb(172, 232, 255);">
         <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
         <h3>Faça sua Sugestão abaixo:</h3>
         @php
