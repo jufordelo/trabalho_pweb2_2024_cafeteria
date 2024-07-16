@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("tel",40);
             $table->string("data",10);
             $table->string("hora",5);
-            $table->string("pss",3);
+            $table->string("pss",16);
             $table->foreignId ('categoria_reserva_id')->nullable()
                 ->constrained('categoria_reservas')->after('id');
             $table->timestamps();

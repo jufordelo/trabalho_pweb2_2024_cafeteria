@@ -6,6 +6,25 @@
 
     <h3> Listagem de Reservas </h3>
     <h5>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h5> <br>
+    <header>
+        <!-- Aqui vai o cabeçalho com logo, navegação principal, etc. -->
+        <nav>
+            <ul>
+                <div class="col-4" style="">
+                    <div style="white-space: nowrap;">
+                        <h6>Menu de Páginas </h6> 
+                            <a href="{{url('encomenda/create')}}" class="btn btn-outline-light btn-sm text-dark" style="display: inline-block; margin-right: 5px;"> Encomenda</a>
+                            <a href="{{url('reserva/create')}}" class="btn btn-outline-light btn-sm text-dark" style="display: inline-block; margin-right: 5px;"> Reserva</a>
+                            <a href="{{url('sugestao/create')}}" class="btn btn-outline-light  btn-sm text-dark" style="display: inline-block;"> FeedBacks</a>
+                        </div>
+        
+                </div>
+            </div>
+            </ul>
+        </nav>
+    </header>
+
+
     <form action="{{ route('reserva.search') }}" method="post">
         <div class="row">
             @csrf
@@ -36,7 +55,7 @@
                 <th>Data da reserva</th>
                 <th>Horário da reserva</th>
                 <th>Quantidade de pessoas</th>
-                <th>Escolha a Categoria</th>
+                <th>Categoria</th>
                 <th colspan="2">EDITAR</th>
                 <th colspan="2">EXCLUIR</th>
             </tr>

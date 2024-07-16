@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Reserva extends Model
+
 {
     use HasFactory;
 
-    protected $table = "reservas";
+    protected $table = "reservas"; 
+   
     protected $fillable = [
+        
         "resp",
         "tel",
         "data",
@@ -18,10 +21,10 @@ class Reserva extends Model
         "pss",
         "categoria_reserva_id",
     ];
-    protected $casts = [
+    protected $casts = [ 
         'categoria_reserva_id' => 'integer',
     ];
-    public function categoria()
+    public function categoria()  
     {
         return $this->belongsTo(CategoriaReserva::class, 'categoria_reserva_id');
     }

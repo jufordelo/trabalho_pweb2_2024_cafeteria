@@ -23,28 +23,34 @@ class CategoriaReservaController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // dd($request->all());
+    {   // dd($request->all());
         $request->validate([
-            'resp' => "required|max:100",
-            'data' => "nullable",
-            'hora' => "nullable",
-            'pss' => "required|max:3",
-            'tel' => "nullable",
+            'resp' => 'required|max:100',
+            'data' => 'nullable',
+            'hora' => 'nullable',
+            'pss' => 'required|max:16',
+            'tel' => 'nullable',
+            'categoria_reserva_id' => 'required|exists:categoria_reserva_id', // Validar que a categoria existe na tabela categorias_reserva
         ], [
-            'resp.required' => "O :attribute é obrigatório",
-            'resp.max' => "São permitidos 100 caracteres",
-            'pss.required' => "O :attribute é obrigatório",
-            'pss.max' => "São permitidos 3 caracteres",
-            //  'categoria_reserva_id.required'=> "O: attribute é obrigatório",
+            'resp.required' => 'O campo :attribute é obrigatório.',
+            'resp.max' => 'O campo :attribute não pode ter mais de 100 caracteres.',
+            'pss.required' => 'O campo :attribute é obrigatório.',
+            'pss.max' => 'O campo :attribute não pode ter mais de 3 caracteres.',
+            'categoria_reserva_id.required' => 'A categoria da reserva é obrigatória.',
+            'categoria_reserva_id.exists' => 'A categoria selecionada é inválida.',
         ]);
 
-        // dd($request->all());
-        Reserva::create(
-            $request->all()
-        );
-
-        return redirect('reserva');
+        // Criação da reserva
+        $reserva = Reserva::create([
+            'resp' => $request->resp,
+            'tel' => $request->tel,
+            'pss' => $request->pss,
+            'categoria_reserva_id' => $request->categoria_reserva_id,
+            'data' => $request->data,
+            'hora' => $request->hora,
+        ]);
+              return redirect('reserva'); 
+    
     }
 
     /**
@@ -84,7 +90,7 @@ class CategoriaReservaController extends Controller
             'resp.required' => "O :attribute é obrigatório",
             'resp.max' => "São permitidos 100 caracteres",
             'pss.required' => "O :attribute é obrigatório",
-            'pss.max' => "É permitido somente 3 unidades",
+            'pss.max' => "É permitido somente 16 unidades",
             'categoria_reserva_id.required' => "O: attribute é obrigatório",
         ]);
 

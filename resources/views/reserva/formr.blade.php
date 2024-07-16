@@ -54,7 +54,7 @@
 
 
         <label for=""> Escolha uma opção de reserva: </label><br>
-        <select name="categoria_reserva_id" class="form-select">
+        <select name="categoria_reservas_id" class="form-select">
             @foreach ($categoria_reservas as $item)
                 <option value="{{ $item->id }}">{{ $item->nome }}</option>
             @endforeach
