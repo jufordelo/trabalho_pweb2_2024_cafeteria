@@ -11,12 +11,12 @@
         <ul>
             <div class="col-4" style="">
                 <div style="white-space: nowrap;">
-                    <h6>Menu de Páginas </h6> 
+                    <h6>Menu de Páginas </h6>
                         <a href="{{url('encomenda/create')}}" class="btn btn-outline-light btn-sm text-dark" style="display: inline-block; margin-right: 5px;"> Encomenda</a>
                         <a href="{{url('reserva/create')}}" class="btn btn-outline-light btn-sm text-dark" style="display: inline-block; margin-right: 5px;"> Reserva</a>
                         <a href="{{url('sugestao/create')}}" class="btn btn-outline-light  btn-sm text-dark" style="display: inline-block;"> FeedBacks</a>
                     </div>
-    
+
             </div>
         </div>
         </ul>
@@ -38,8 +38,8 @@
             <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
                 </i>Buscar</button>
                     <a href="{{url('encomenda/create')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-cart-shopping" style="color: #76f0e6;"></i> Novo Pedido</a>
+                    <a href="{{ url('encomenda/report') }}" class="btn btn-dark"style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-file-pdf"style="color:#FF69B4 ;"></i> Relatório PDF</a>
                     <a href="{{url('encomenda/chart')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-layer-group" style="color: #7e71f8;"></i> Gráfico</a>
-                    <a href="{{url('encomenda/gerarPDF')}}" class="btn btn-dark" style="display: inline-block;"><i class="fa-solid fa-file-pdf" style="color: #f27979;"></i> Relatório PDF</a>
                 </div>
 
         </div>

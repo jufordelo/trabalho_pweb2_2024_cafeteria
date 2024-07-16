@@ -7,7 +7,7 @@ use App\Models\Reserva;
 use App\Models\categoria1;
 use App\Models\CategoriaReserva;
 use Illuminate\Http\Request;
-
+use PDF;
 
 class ReservaController extends Controller
 {
@@ -138,4 +138,22 @@ class ReservaController extends Controller
     {
         return view("reserva.chart", ["reservaChart" => $reservaChart -> build()]);
     }
+
+    public function report()
+    {
+        $reservas = Reserva::All();
+
+        $data = [
+            'titulo' => 'Relatório de Reservas',
+            'reserva'=> $reservas,
+        ];
+
+        $pdf = PDF::loadView('reserva.report', $data);
+
+        return $pdf->download('relatorio_reservas.pdf');
+    }
+
+
+
+
 }

@@ -37,8 +37,8 @@
                 <div style="white-space: nowrap;">
                 <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i>
                 </class></i> Buscar</button>
-                <a href="{{url('reserva/create') }}" class="btn btn-dark"> <i class="fa-solid fa-pen-to-square"style="color: #a58eec;"></i></i> Nova Reserva</a>
-                <a href="{{url('reserva/generatePDF')}}" class="btn btn-dark" style="display: inline-block;"><i class="fa-solid fa-file-pdf" style="color: #f27979;"></i>Relatório PDF</a>
+                <a href="{{url('reserva/create') }}" class="btn btn-dark "style="display: inline-block; margin-right: 10px;"> <i class="fa-solid fa-pen-to-square"style="color: #a58eec;"></i></i> Nova Reserva</a>
+                <a href="{{ url('reserva/report') }}" class="btn btn-dark"style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-file-pdf"style="color:#FF69B4 ;"></i> Relatório PDF</a>
                 <a href="{{url('/reserva/chart')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-layer-group" style="color: #7e71f8;"></i> Gráfico</a>
 
             </div>

@@ -130,6 +130,19 @@ class EncomendaController extends Controller
     {
         return view("encomenda.chart", ["encomendaChart" => $encomendaChart -> build()]);
     }
+    public function report()
+    {
+        $encomendas = Encomenda::All();
+
+        $data = [
+            'titulo' => 'Relatório de Encomendas',
+            'encomenda'=> $encomendas,
+        ];
+
+        $pdf = PDF::loadView('encomenda.report', $data);
+
+        return $pdf->download('relatorio_encomendas.pdf');
+    }
 
 
 }

@@ -10,15 +10,12 @@ Route::get('/', function () {
 
 //pesquisa/buscar
 
- //PDF
-Route::get('pdf', 'PdfController@gerarPDF');
-Route::get('pdf', 'PdfReservaController@generatePDF');
-// Route ::get('/encomenda/pdf', [PDFController::class,"pdf"] )-> name('encomenda.pdf');
 
 
 //ENCOMENDA
 Route::post('/encomenda/search', [EncomendaController::class,"search"])->name('encomenda.search');
 Route::get('/encomenda/chart',[EncomendaController::class, "chart"])-> name ("encomenda.chart");
+Route::get('/encomenda/report/',[EncomendaController::class, "report"])->name('encomenda.report');
 Route::resource('encomenda', EncomendaController::class);
 
 
@@ -26,6 +23,7 @@ Route::resource('encomenda', EncomendaController::class);
 
 Route::post('/reserva/search', [ReservaController::class,"search"])->name('reserva.search');
 Route::get('/reserva/chart',[ReservaController::class, "chart"])-> name ("reserva.chart");
+Route::get('/reserva/report/',[ReservaController::class, "report"])->name('reserva.report');
 Route::resource('reserva', ReservaController::class);
 
 Route::resource('categoria_reserva', CategoriaReservaController::class);
