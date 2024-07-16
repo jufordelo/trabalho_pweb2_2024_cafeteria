@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\GraficoReservaChart;
 use App\Models\Reserva;
 use App\Models\categoria1;
 use App\Models\CategoriaReserva;
 use Illuminate\Http\Request;
-use App\Charts\GraficoReserva;
+
 
 class ReservaController extends Controller
 {
@@ -52,8 +53,8 @@ class ReservaController extends Controller
             'data' => $request->data,
             'hora' => $request->hora,
         ]);
-              return redirect('reserva'); 
-    } 
+              return redirect('reserva');
+    }
 
     /**
      * Display the specified resource.
@@ -133,7 +134,7 @@ class ReservaController extends Controller
         } //dd($dados)
              return view("reserva.listr",["dados"=> $dados]);
     }
-    public function chart(GraficoReserva $reservaChart)
+    public function chart(GraficoReservaChart $reservaChart)
     {
         return view("reserva.chart", ["reservaChart" => $reservaChart -> build()]);
     }

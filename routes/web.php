@@ -23,11 +23,13 @@ Route::resource('encomenda', EncomendaController::class);
 
 
 //RESERVA
-Route::resource('reserva', ReservaController::class);
+
 Route::post('/reserva/search', [ReservaController::class,"search"])->name('reserva.search');
+Route::get('/reserva/chart',[ReservaController::class, "chart"])-> name ("reserva.chart");
+Route::resource('reserva', ReservaController::class);
+
 Route::resource('categoria_reserva', CategoriaReservaController::class);
 Route::post('/categoria_reserva/search', [CategoriaReservaController::class,"search"])->name('categoria_reserva.search');
-Route::get('/reserva/chart',[ReservaController::class, "chart"])-> name ("reserva.chart");
 
 //SUGESTAO
 Route::resource('sugestao', SugestaoController::class);
