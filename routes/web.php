@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonalizadoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\ReservaController;
@@ -32,4 +33,9 @@ Route::post('/categoria_reserva/search', [CategoriaReservaController::class,"sea
 //SUGESTAO
 Route::resource('sugestao', SugestaoController::class);
 Route::post('/sugestao/search', [SugestaoController::class,"search"])->name('sugestao.search');
+
+//PERSONALIZADO
+
+Route::post('/personalizado/search', [PersonalizadoController::class,"search"])->name('personalizado.search');
+Route::resource('personalizado', PersonalizadoController::class);
 
