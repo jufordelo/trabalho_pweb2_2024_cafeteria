@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string("horareti",5);
             $table->string("datareti",10);
             $table->string("obs",40);
-            $table->foreignId ('categoria_paersonalizado_id')->nullable()
+            $table->foreignId ('categoria_personalizados_id')->nullable()
             ->constrained('categoria_personalizados')->after('id');
             $table->timestamps();
         });

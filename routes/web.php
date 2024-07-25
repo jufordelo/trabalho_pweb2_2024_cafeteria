@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\PersonalizadoController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\SugestaoController;
-
+use App\Http\Controllers\PersonalizadoController;
 Route::get('/', function () {
 });
 

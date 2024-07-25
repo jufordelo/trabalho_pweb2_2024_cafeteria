@@ -5,6 +5,9 @@
 
    <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
     <h4> Personalize seu Bolo Abaixo: </h4>
+    <h9>Caso queira realizar somente uma encomenda clique no botão abaixo:</h9>
+    <a href="{{url('encomenda/create')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-pen-to-square" style="color: #76f0e6;"></i> Encomende Aqui</a>
+
     @php
         if (!empty($dado->id)) {
             $route = route('personalizado.update', $dado->id);
@@ -37,19 +40,19 @@
         <br>
 
 
-        <label for=""> Insira o Kg desejado </label>
+        <label for=""> Insira o Kilograma (KG) </label>
         <input type="text" name="kg" class="form-control"
             value="@if (!empty($dado->kg)) {{ $dado->kg }}
      @elseif (!empty(old('kg'))) {{ old('kg') }} else{{ '' }} @endif">
         <br>
 
-        <label for=""> Insira o dia que irá retirar</label>
+        <label for=""> Dia da retirada </label>
         <input type="text" name="datareti" class="form-control"
             value="@if (!empty($dado->datareti)) {{ $dado->datareti }}
      @elseif (!empty(old('datareti'))) {{ old('datareti') }} else{{ '' }} @endif">
         <br>
 
-        <label for=""> Insira a hora que irá retirar</label>
+        <label for=""> Hora da retirada </label>
         <input type="text" name="horareti" class="form-control"
             value="@if (!empty($dado->horareti)) {{ $dado->horareti }}
      @elseif (!empty(old('horareti'))) {{ old('horareti') }} else{{ '' }} @endif">
@@ -60,7 +63,7 @@
      @elseif (!empty(old('obs'))) {{ old('obs') }} else{{ '' }} @endif">
         <br>
         <label for=""> Escolha uma opção de Sabor </label><br>
-        <select name="categoria_personalizados_id" class="form-select">
+        <select name="categoria_personalizado_id" class="form-select">
             @foreach ($categoria_personalizados as $item)
                 <option value="{{ $item->id }}">{{ $item->nome }}</option>
             @endforeach

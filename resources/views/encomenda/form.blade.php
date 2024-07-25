@@ -5,6 +5,8 @@
 
    <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
     <h4>Faça seu Pedido de Festa abaixo:</h4>
+    <h9> Caso queira personalizar sua encomenda clique abaixo:</h9>
+    <a href="{{url('personalizado/create')}}" class="btn btn-outline-light  btn-sm text-dark" style="display: inline-block;"> Quero Personalizar </a>
     @php
         if (!empty($dado->id)) {
             $route = route('encomenda.update', $dado->id);

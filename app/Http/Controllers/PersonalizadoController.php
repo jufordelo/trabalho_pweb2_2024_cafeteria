@@ -37,7 +37,7 @@ class PersonalizadoController extends Controller
             'obs.required' => 'O campo :attribute é obrigatório.',
             'obs.max' => 'O campo :attribute não pode ter mais de 3 caracteres.',
             'imagem.image' => "Deve ser enviado uma imagem",
-            'imagem.mimes' => "A imagem deve ser da extensão de PNG, JPEG ou JPG",
+
              //copiei de encomenda, qualuqer coisa faz igual reserva
         ]);
 
@@ -110,7 +110,7 @@ class PersonalizadoController extends Controller
             'obs.required' => 'O campo :attribute é obrigatório.',
             'obs.max' => 'O campo :attribute não pode ter mais de 3 caracteres.',
             'imagem.image' => "Deve ser enviado uma imagem",
-            'imagem.mimes' => "A imagem deve ser da extensão de PNG, JPEG ou JPG",
+
 
         ]);
         $data = $request->all();
@@ -161,4 +161,5 @@ class PersonalizadoController extends Controller
              return view("personalizado.list",["dados"=> $dados]);
 
     }
+
 }

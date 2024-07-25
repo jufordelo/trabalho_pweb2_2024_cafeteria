@@ -38,6 +38,8 @@
             <button type="submit"class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></class=>
                 </i>Buscar</button>
                     <a href="{{url('personalizado/create')}}" class="btn btn-dark" style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-cart-shopping" style="color: #76f0e6;"></i> Criar Nova </a>
+                    <a href="{{ url('personalizado/report') }}" class="btn btn-dark"style="display: inline-block; margin-right: 10px;"><i class="fa-solid fa-file-pdf"style="color:#FF69B4 ;"></i> Relatório PDF</a>
+
                 </div>
 
         </div>
