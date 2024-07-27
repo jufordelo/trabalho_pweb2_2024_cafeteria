@@ -6,6 +6,7 @@ use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\SugestaoController;
 use App\Http\Controllers\PersonalizadoController;
+use App\Http\Controllers\EstoqueController;
 Route::get('/', function () {
 });
 
@@ -39,3 +40,7 @@ Route::post('/sugestao/search', [SugestaoController::class,"search"])->name('sug
 Route::post('/personalizado/search', [PersonalizadoController::class,"search"])->name('personalizado.search');
 Route::resource('personalizado', PersonalizadoController::class);
 
+//ESTOQUE
+Route::post('/estoque/search', [EstoqueController::class,"search"])->name('estoque.search');
+Route::get('/estoque/report/',[EstoqueController::class, "report"])->name('estoque.report');
+Route::resource('estoque', EstoqueController::class);
