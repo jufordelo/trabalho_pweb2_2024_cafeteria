@@ -18,7 +18,7 @@ class EstoqueFactory extends Factory
     {
         return [
             'mprima' => $this->faker->word(),
-            'tipo' => $this->faker->randomElement(['Utencílio', 'Alimento', 'Embalagens', 'Decoração', 'Outro']),
+            'tipo' => $this->faker->randomElement(['Utensílio', 'Alimento', 'Embalagens', 'Decoração', 'Outro']),
             'validade' => $this->faker->paragraph(),
             'quantidade' => $this->faker->word(),
         ];
