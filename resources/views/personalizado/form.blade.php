@@ -15,8 +15,8 @@
             $route = route('personalizado.store');
         }
     @endphp
-    <form action= "{{ $route }}" method="post">
-
+    <form action= "{{ $route }}" method="post" enctype="multipart/form-data">
+ 
         @csrf
 
         @if (!empty($dado->id))
