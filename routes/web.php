@@ -7,12 +7,10 @@ use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\SugestaoController;
 use App\Http\Controllers\PersonalizadoController;
 use App\Http\Controllers\EstoqueController;
+
 Route::get('/', function () {
+    return view('welcome');
 });
-
-//pesquisa/buscar
-
-
 
 //ENCOMENDA
 Route::post('/encomenda/search', [EncomendaController::class,"search"])->name('encomenda.search');

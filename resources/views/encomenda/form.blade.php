@@ -24,7 +24,6 @@
         <input type="hidden" name="id"
             value="@if (!empty($dado->id)) {{ $dado->id }} @else{{ '' }} @endif"><br>
 
-
         <label for="">Nome</label> <br>
         <input type="text" name="nome" class="form-control"
             value="@if (!empty($dado->nome)) {{ $dado->nome }}

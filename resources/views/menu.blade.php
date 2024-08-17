@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">BREAKIE COFFEE☕</a>
-      
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,12 +26,12 @@
             </a>
             <ul class="dropdown-menu">
               <li> <a class="nav-link"  style="color: black;" href="{{url('estoque/create')}}">  Estoque de Produtos </a>
-        
+
             </ul>
           </li>
 
         </ul>
-  <h6 style="color: white;"> Entre em contato conosco:</h6>
+  <h6 style="color: white;"> Entre em contato conosco</h6>
         <h9 style="color: white;"> 📩 contato.cafeteriabreakiecoffee@gmail.com </h9> <br>
          <h9 style="color: white;"> ☎️ (49)3324-6578</h9>
       </div>

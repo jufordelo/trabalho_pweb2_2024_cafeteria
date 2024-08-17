@@ -46,7 +46,7 @@
 
             <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #00FF7F;"></i>
                 Enviar</button>
-          
+
         <a class="btn btn-dark" href="{{ url('sugestao') }} "><i class="fa-solid fa-rotate-left"
             style="color: #ff3d3d;"></i> Voltar</a>
 
