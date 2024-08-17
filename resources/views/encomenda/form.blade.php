@@ -3,9 +3,8 @@
 
 <body style="background-color:rgb(228, 226, 149);" > </body>
 
-   <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
-    <h4>Faça seu Pedido de Festa abaixo:</h4>
-    <h9> Caso queira personalizar sua encomenda clique abaixo:</h9>
+    <h4>Faça sua Encomenda de Festa </h4>
+    <h9>Caso queira personalizar sua encomenda clique abaixo:</h9>
     <a href="{{url('personalizado/create')}}" class="btn btn-outline-light  btn-sm text-dark" style="display: inline-block;"> Quero Personalizar </a>
     @php
         if (!empty($dado->id)) {
@@ -55,11 +54,10 @@
 
 
 <br>
-        <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #B197FC;"></i>
-Enviar</button>
+        <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #00FF7F;"></i>
+Concluir Encomenda</button>
 
-
-        <button class="btn btn-dark"> <i class="fa-solid fa-rotate-left" style="color: #B197FC;"></i><a href="{{ url('encomenda') }} "></a>Voltar</a></button>
-
+        <a class="btn btn-dark" href="{{ url('encomenda') }} "><i class="fa-solid fa-rotate-left"
+            style="color: #ff3d3d;"></i> Voltar</a>
     </form>
 @stop

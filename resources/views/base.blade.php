@@ -12,22 +12,23 @@
      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-    <div>
-      <div>
-        @if ($errors->any())
-        <b> Por favor, verifique os dados abaixo:</b>
-        <ul>
-            @foreach ($errors->all() as $error )
-            <li>{{$error}}</li>
-            @endforeach
-        </ul>
-        @endif
-      </div>
-    </div>
+    @include('menu')
     <div class="container mt-4">
+
         <div class="row">
+            <div>
+                <div>
+                    @if ($errors->any())
+                        <b> Por favor, verifique os dados abaixo:</b>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+            </div>
             @yield('conteudo')
         </div>
 

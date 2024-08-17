@@ -1,9 +1,9 @@
 @extends('base')
 @section('conteudo')
 
-    <body style="background-color:rgb(172, 232, 255);">
-        <h3>BREKIEE COFFEE <i class="fa-solid fa-mug-hot" style="color: #f56bd0;"></i></h3> <br>
-        <h3>Faça sua Sugestão abaixo:</h3>
+<body style="background-color:rgb(228, 226, 149);">
+        <h3> FeedBacks e Sugestões</h3>
+           <h6>Sua opinião é importante e ajuda nós a crescer cada dia mais!</h6>
         @php
 
            // dd($dado);
@@ -22,14 +22,12 @@
             @endif
 
             <input type="hidden" name="id"
-                value="@if (!empty($dado->id)) {{ $dado->id }} @else{{ '' }} @endif"><br>
+                value="@if (!empty($dado->id)) {{ $dado->id }} @else{{ '' }} @endif">
 
-
-            <label for="">Assunto:</label> <br>
+            <label for="">Assunto:</label>
             <input type="text" name="assunto" class="form-control"
                 value="@if (!empty($dado->assunto)) {{ $dado->assunto }}
      @elseif (!empty(old('assunto'))) {{ old('assunto') }} else{{ '' }} @endif">
-            <br>
 
             <label for="">Tipo de atendimento:</label><br>
             <select name="tipo" class="form-select">
@@ -46,11 +44,11 @@
             <br>
 
 
-            <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #B197FC;"></i>
+            <button type="submit" class="btn btn-dark"><i class="fa-solid fa-square-check" style="color: #00FF7F;"></i>
                 Enviar</button>
-            <button class="btn btn-dark"> <i class="fa-solid fa-rotate-left" style="color: #B197FC;"></i><a
-                    href="{{ url('sugestao') }} "></a>Voltar</a></button>
-
+          
+        <a class="btn btn-dark" href="{{ url('sugestao') }} "><i class="fa-solid fa-rotate-left"
+            style="color: #ff3d3d;"></i> Voltar</a>
 
         </form>
     @stop
